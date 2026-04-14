@@ -35,7 +35,7 @@ class DataProcessor:
         if 'name' in df.columns:
             df['name'] = df['name'].str.strip()
             
-        df.columns = [col.lower() for col in df.columns]
+        df.columns = [col.strip().replace(' ', '_').replace('%', 'Rate') for col in df.columns]
 
         if 'conv_rate' in df.columns:
             df['conv_rate'] = df['conv_rate'] / 100
