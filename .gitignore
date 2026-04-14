@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+venv/
+env/
+.env
+
+logs/*.log
+*.csv.tmp
+
+# Cấu hình trình duyệt và Driver
+.wdm/
+chromedriver
+geckodriver
+
+# IDE (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db

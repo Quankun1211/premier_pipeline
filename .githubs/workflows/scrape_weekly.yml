@@ -1,0 +1,34 @@
+name: Weekly Premier League Stats Update
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Cho phép bấm chạy thủ công trên GitHub
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run pipeline
+        run: python main.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          # Thêm cả file .db và .csv vào commit
+          git add data/premier_league.db data/premier_league_cleaned.csv
+          git commit -m "Auto-update stats: $(date)" || echo "No changes to commit"
+          git push
