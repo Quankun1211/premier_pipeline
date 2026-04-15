@@ -40,3 +40,5 @@ Hệ thống được xây dựng theo mô hình kiến trúc dữ liệu hiện
 3. **Run Locally:**
    ```bash
    python main.py
+
+![Ảnh Minh Họa](./images/image.png)
