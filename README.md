@@ -49,6 +49,4 @@ The system follows a modern data engineering architecture:
 
 ## 📈 Dashboard Preview
 
-<p align="center">
-  <img src="./image/image.png" alt="Premier League Dashboard" width="800">
-</p>
+![Dashboard Preview](./images/image.png)
